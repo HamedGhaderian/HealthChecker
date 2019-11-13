@@ -1,1 +1,2 @@
 # HealthChecker
+use OOP principle
