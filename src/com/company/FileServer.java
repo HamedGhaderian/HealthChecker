@@ -7,6 +7,7 @@ public class FileServer implements Server {
         if (isUploadFileSuccess())
             return true;
         else {
+            sendNotify();
             return false;
         }
     }
@@ -15,5 +16,8 @@ public class FileServer implements Server {
         return false;
     }
 
-
+    private void sendNotify() {
+        Notify notify = new Notify();
+        notify.sendEmail();
+    }
 }

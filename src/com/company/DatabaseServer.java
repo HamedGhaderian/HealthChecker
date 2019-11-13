@@ -8,6 +8,7 @@ class DatabaseServer implements Server {
         if (isResponseQuerySuccess())
             return true;
         else {
+            sendNotify();
             return false;
         }
     }
@@ -16,4 +17,8 @@ class DatabaseServer implements Server {
         return true;
     }
 
+    private void sendNotify() {
+        Notify notify = new Notify();
+        notify.sendSms();
+    }
 }
